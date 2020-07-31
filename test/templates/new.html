@@ -1,0 +1,104 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<head>
+<style >
+  
+  
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+</style>
+</head>
+<body>
+  
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">{{ user }}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+         
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container"> 
+<h1 style="text-align: center;">BAJRANG DAL</h1>
+  <h2 style="text-align: center;">Activity Page</h2>
+      <p style="text-align: center;">(All fields with * are compulasary)</p>
+
+  <form action = "{{ request.path }}" method = "post">
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="place">Place:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control"  placeholder="Enter place" name="place">
+      </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="date">Date:</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control"  placeholder="Enter date(dd-mm-yyyy)" name="date">
+      </div>
+      </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="time">Time:</label>
+      <div class="col-sm-10">
+        <input type="time" class="form-control"  placeholder="Enter time" name="time">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="about">About:</label>
+      <div class="col-sm-10">
+      <textarea rows="5" cols="50" name = "activity" placeholder = "Enter text here!"></textarea>
+      <center>
+              <br><br><input  class="btn btn-primary" type = "submit" value = "Add activity" /></center> 
+      </div>
+      <br><br><br><br>
+
+
+    </div><
+      </form>
+</div>
+</body>
+{% endblock %}
+
+

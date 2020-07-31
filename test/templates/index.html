@@ -1,0 +1,43 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block content %}
+<head>
+	<style>
+		.button {
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width:30%
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+	</style>
+</head>
+<body background="/static/images/img1.jpg" style="background-size: cover;background-repeat: no-repeat;opacity:1">
+<div style="height: 50px;"></div>
+<div class="container">
+<h1 style="font-size: 50px;"> <i>Couple Dal</i></h1>
+<div style="height: 20px;"></div>
+<p style="font-size: 30px; opacity: 0.6">
+  <i>"Love is the most<br> beautiful thing that can <br>happen to anyone".</i><br>
+</p><br><br>
+
+<a href="{{ url_for('register') }}"><button class="button button2"><i>Signup</i></button></a><br>
+<a href="{{ url_for('login') }}"><button class="button button2"><i>Login..</i></button></a>
+
+</div>
+</body>
+{% endblock %}
+
+
